@@ -1,6 +1,6 @@
 [
   {
-    "modid": "lowercase_abbreviation_for_addon",
+    "modid": "trainaddon",
     "name": "FoxTC-Addon-Template",
     "description": "A addon pack for FoxTC",
     "version": "1.0.0",

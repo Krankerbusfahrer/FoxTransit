@@ -1,41 +1,44 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+// -------------------- CONFIG --------------------
+def gitTC = 'https://github.com/bidahochi/Traincraft-5.git'
+def branch = 'foxtc-020-tracktastic'
+def cloneDir = "${buildDir}/libs/TC/"
+
 buildscript {
-	repositories {
-		maven {
-            url "https://repo1.maven.org/maven2" 
-        }
-        maven {
-            name = "forge"
-            url = "https://maven.minecraftforge.net/"
-        }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
-	}
-	dependencies {
-      classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.1.+') {
-         changing = true
-     }
+    repositories {
+        maven { url "https://repo1.maven.org/maven2" }
+        maven { name = "forge"; url = "https://maven.minecraftforge.net/" }
+        maven { name = "sonatype"; url = "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+    dependencies {
+        classpath('com.anatawa12.forge:ForgeGradle:1.2-1.1.+') { changing = true }
     }
 }
 
 apply plugin: 'forge'
 apply plugin: 'idea'
-sourceCompatibility = targetCompatibility = "1.7"
-compileJava { sourceCompatibility = targetCompatibility = "1.7" }
 
-ext.configFile = file "build.properties"
+sourceCompatibility = targetCompatibility = "1.8"
+compileJava { sourceCompatibility = targetCompatibility = "1.8" }
+
+ext.configFile = file("build.properties")
 configFile.withReader {
     def prop = new Properties()
     prop.load(it)
-    project.ext.config = new ConfigSlurper().parse prop
+    project.ext.config = new ConfigSlurper().parse(prop)
 }
 
+configurations {
+    embedded
+    implementation.extendsFrom embedded
+}
 
 version = "1.0.0"
-group= "src.trainaddon" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = "src.trainaddon"
 archivesBaseName = "FoxTC_Addon-PACKNAME"
 
+// -------------------- MINECRAFT --------------------
 minecraft {
     version = "1.7.10-10.13.4.1614-1.7.10"
     runDir = "run"
@@ -43,107 +46,130 @@ minecraft {
     replace "@VERSION1@", config.modVersion.toString()
 }
 
-repositories {
-    maven {
-        name "ChickenBones"
-        url "http://chickenbones.net/maven/"
-    }
-	   maven { 
-        url = "http://maven.cil.li/"
-    }
-}
+// -------------------- CLONE + BUILD TRAINCRAFT --------------------
+task buildTC {
+    description = "Clone Traincraft if missing and build it"
 
-dependencies {
-    repositories {
-        ivy {
-            name "BuildCraft"
-            artifactPattern "http://www.mod-buildcraft.com/releases/BuildCraft/[revision]/[module]-[revision](-[classifier]).[ext]"
+    doLast {
+        // Clone or pull
+        if (!file(cloneDir).exists()) {
+            println "Cloning Traincraft repo..."
+            mkdir(cloneDir)
+            exec {
+                commandLine 'git', 'clone', '--branch', branch, gitTC, cloneDir
+            }
+        } else {
+            println "Updating existing Traincraft repo..."
+            exec {
+                commandLine 'git', '-C', cloneDir, 'pull'
+            }
+        }
+
+        // Ensure Gradlew is executable on Unix
+        if (Os.isFamily(Os.FAMILY_UNIX)) {
+            exec {
+                commandLine 'chmod', 'a+rwx', "${cloneDir}/gradlew"
+            }
+        }
+
+        // Build Traincraft
+        println "Building Traincraft..."
+        if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+            exec {
+                commandLine 'cmd', '/c', 'gradlew.bat', 'build'
+                workingDir cloneDir
+            }
+        } else {
+            exec {
+                commandLine './gradlew', 'build'
+                workingDir cloneDir
+            }
         }
     }
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-	
-	compile "li.cil.oc:OpenComputers:MC1.7.10-1.7.5+:api"
-    compile name: "buildcraft", version: "7.1.16", classifier: "dev"
-	compile "codechicken:CodeChickenLib:1.7.10-1.1.3.140:dev"
-	compile "codechicken:CodeChickenCore:1.7.10-1.0.7.47:dev"
-	compile "codechicken:NotEnoughItems:1.7.10-1.0.5.120:dev"
-    compile fileTree(dir: 'jarfolder', includes: ['*.jar'])
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
-processResources
-{
-    // this will ensure that this task is redone when the versions change.
+// -------------------- COPY TC JAR FOR RUNTIME --------------------
+task copyTCJar(type: Copy) {
+    description = "Copy Traincraft jar to run/mods"
+    from("${cloneDir}/build/libs") {
+        include "Fox-Traincraft-*.jar"
+        exclude "*-dev.jar", "*-sources.jar"
+    }
+    into "${projectDir}/run/mods"
+}
+copyTCJar.dependsOn buildTC
+
+// Ensure tasks use TC jar
+tasks.runClient.dependsOn copyTCJar
+tasks.runServer.dependsOn copyTCJar
+tasks.build.dependsOn buildTC
+
+// -------------------- SOURCE SETS --------------------
+sourceSets {
+    main {
+        java {
+            srcDirs += file("${cloneDir}/src/main/java")
+        }
+        resources {
+            srcDir "${cloneDir}/src/main/resources"
+        }
+    }
+}
+
+// -------------------- JAR CONFIG --------------------
+jar {
+    exclude('train/**')
+    exclude('build/libs/tc/src/main/java/train/**')
+}
+
+// -------------------- REPOSITORIES --------------------
+repositories {
+    maven { name "gt"; url "https://gregtech.overminddl1.com/" }
+    maven { name "codechicken"; url "https://maven.cil.li/" }
+    flatDir { dirs "libs" }
+    maven { name "curse.maven"; url "https://cursemaven.com" }
+    ivy {
+        name "BuildCraft"
+        artifactPattern "http://www.mod-buildcraft.com/releases/BuildCraft/[revision]/[module]-[revision]-[classifier].[ext]"
+    }
+}
+
+// -------------------- DEPENDENCIES --------------------
+dependencies {
+    compileOnly "li.cil.oc:OpenComputers:MC1.7.10-1.7.2.1204:dev"
+    compileOnly "com.mod-buildcraft:buildcraft:7.1.23:dev"
+
+    compile "codechicken:CodeChickenLib:1.7.10-1.1.3.136:dev"
+    compile "codechicken:CodeChickenCore:1.7.10-1.0.4.35:dev"
+    compile "codechicken:NotEnoughItems:1.7.10-1.0.4.90:dev"
+    compile "codechicken:ForgeMultipart:1.7.10-1.2.0.345:dev"
+
+    // Include TC jar for compilation
+    compileOnly fileTree(dir: "${cloneDir}/build/libs", include: ["Fox-Traincraft-*dev.jar"])
+
+    // Optional: local lib folder
+  //  compile fileTree(dir: 'lib', include: ['*.jar'])
+}
+
+// -------------------- PROCESS RESOURCES --------------------
+processResources {
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
 
-    // replace stuff in mcmod.info, nothing else
+    // Replace version in mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-                
-        // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version': project.version, 'mcversion': project.minecraft.version
     }
-        
-    // copy everything else, thats not the mcmod.info
+
+    // Copy all other resources
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
 }
 
-idea
-{
-	module
-	{
-		inheritOutputDirs = true
-	}
-}
-task sourceJar(type: Jar) {
-	manifest {}
-	classifier = 'sources'
-	from sourceSets.main.allSource
-	exclude 'assets/**'
-}
-
-task devJar(type: Jar) {
-	manifest {}
-	classifier = 'dev'
-	from sourceSets.main.output
-}
-
-artifacts {
-	archives devJar, sourceJar
-}
-
-if (!hasProperty("mavenUsername")) {
-	ext.mavenUsername="${System.getenv().MAVEN_USERNAME}"
-}
-
-if (!hasProperty("mavenPassword")) {
-	ext.mavenPassword="${System.getenv().MAVEN_PASSWORD}"
-}
-
-if (!hasProperty("mavenURL")) {
-	ext.mavenURL="${System.getenv().MAVEN_URL}"
-}
-
-uploadArchives {
-	repositories {
-		mavenDeployer {
-			uniqueVersion = false
-			repository(url: mavenURL) {
-				authentication(userName: mavenUsername, password: mavenPassword)
-			}
-		}
-	}
+// -------------------- IDEA --------------------
+afterEvaluate {
+    tasks["idea"].dependsOn.add(buildTC)
+    tasks["build"].dependsOn.add(buildTC)
 }

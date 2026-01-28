@@ -10,6 +10,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import train.common.core.creativetab.CreativeTabTraincraft;
+import train.common.core.creativetab.GenericCreativeTabTraincraft;
 import trainaddon.common.core.handler.AddonPackRollingStockEntityHandler;
 import trainaddon.common.creativetabs.CreativeTabAddonPack;
 import trainaddon.common.library.AddonPackItems;
@@ -33,7 +35,7 @@ public class FoxTCAddonPack
     public void preInit(FMLPreInitializationEvent event)
     {
         addonLog.info("preInit Addon Pack -" + Info.modName);
-        addonTabOne = new CreativeTabAddonPack(CreativeTabs.getNextID(), "addonTabOne", Items.apple);
+        addonTabOne = new GenericCreativeTabTraincraft("addonTabOne", Info.modID, "apple");
 
         AddonPackItems addonPackItems = new AddonPackItems();
         AddonPackRollingStockEntityHandler entityHandler = new AddonPackRollingStockEntityHandler();
