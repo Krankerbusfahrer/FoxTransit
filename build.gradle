@@ -46,63 +46,8 @@ minecraft {
     replace "@VERSION1@", config.modVersion.toString()
 }
 
-// -------------------- CLONE + BUILD TRAINCRAFT --------------------
-task buildTC {
-    description = "Clone Traincraft if missing and build it"
-
-    doLast {
-        // Clone or pull
-        if (!file(cloneDir).exists()) {
-            println "Cloning Traincraft repo..."
-            mkdir(cloneDir)
-            exec {
-                commandLine 'git', 'clone', '--branch', branch, gitTC, cloneDir
-            }
-        } else {
-            println "Updating existing Traincraft repo..."
-            exec {
-                commandLine 'git', '-C', cloneDir, 'pull'
-            }
-        }
-
-        // Ensure Gradlew is executable on Unix
-        if (Os.isFamily(Os.FAMILY_UNIX)) {
-            exec {
-                commandLine 'chmod', 'a+rwx', "${cloneDir}/gradlew"
-            }
-        }
-
-        // Build Traincraft
-        println "Building Traincraft..."
-        if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-            exec {
-                commandLine 'cmd', '/c', 'gradlew.bat', 'build'
-                workingDir cloneDir
-            }
-        } else {
-            exec {
-                commandLine './gradlew', 'build'
-                workingDir cloneDir
-            }
-        }
-    }
-}
-
-// -------------------- COPY TC JAR FOR RUNTIME --------------------
-task copyTCJar(type: Copy) {
-    description = "Copy Traincraft jar to run/mods"
-    from("${cloneDir}/build/libs") {
-        include "Fox-Traincraft-*.jar"
-        exclude "*-dev.jar", "*-sources.jar"
-    }
-    into "${projectDir}/run/mods"
-}
-copyTCJar.dependsOn buildTC
 
 // Ensure tasks use TC jar
-tasks.runClient.dependsOn copyTCJar
-tasks.runServer.dependsOn copyTCJar
-tasks.build.dependsOn buildTC
 
 // -------------------- SOURCE SETS --------------------
 sourceSets {
@@ -145,10 +90,10 @@ dependencies {
     compile "codechicken:ForgeMultipart:1.7.10-1.2.0.345:dev"
 
     // Include TC jar for compilation
-    compileOnly fileTree(dir: "${cloneDir}/build/libs", include: ["Fox-Traincraft-*dev.jar"])
+    compileOnly fileTree(dir: "build/libs", include: ["Fox-Traincraft-*dev.jar"])
 
     // Optional: local lib folder
-  //  compile fileTree(dir: 'lib', include: ['*.jar'])
+    //  compile fileTree(dir: 'lib', include: ['*.jar'])
 }
 
 // -------------------- PROCESS RESOURCES --------------------
@@ -170,6 +115,4 @@ processResources {
 
 // -------------------- IDEA --------------------
 afterEvaluate {
-    tasks["idea"].dependsOn.add(buildTC)
-    tasks["build"].dependsOn.add(buildTC)
 }
