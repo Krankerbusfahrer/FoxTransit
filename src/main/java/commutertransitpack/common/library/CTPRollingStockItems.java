@@ -9,13 +9,12 @@ import train.common.library.TypeOfRollingStock;
  */
 public enum CTPRollingStockItems
 {
-    BSLB4("template-icon", ELECTRIC, 100),
+    BSLB4("item.BSLB4_Icon", train.common.library.TypeOfRollingStock.ELECTRIC),
     ;
 
 
     /**
      * @param iconName
-     * @param typeOfRollingStock the type of rollingstock
      * @param amountForEmerald amount for Emerald
      */
     CTPRollingStockItems(String iconName, train.common.library.TypeOfRollingStock typeOfRollingStock, int amountForEmerald)

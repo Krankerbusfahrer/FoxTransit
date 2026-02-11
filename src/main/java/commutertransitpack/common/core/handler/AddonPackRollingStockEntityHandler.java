@@ -35,8 +35,8 @@ public class AddonPackRollingStockEntityHandler
                         new TrainRecord(Transport.BSLB4().name, ElectricBSLB4.class, CTPRollingStockItems.BSLB4.item,
                                 Transport.BSLB4().additionalText2, Transport.BSLB4().weightinKGs,
                                 new String[] {"Orange"}, 5, 0, 0.95, (int)Transport.BSLB4().topSpeed,
-                                (int)Transport.BSLB4().metric_horsepower, 40, 0,
-                                0.95, -3.5f, 0),
+                                (int)Transport.BSLB4().metric_horsepower, 30, 0,
+                                0.95, -3.1f, 0),
                         Instance()
                 );
 

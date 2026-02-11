@@ -2,7 +2,7 @@
 <!-- ## Only replace the words on the right side of "=" ## -->
 <!-- ## Save the file the same way this file was saved but replace "en_US" with appropriate language name ## -->
 
-item.tc:minecartTemplate.name=Template Train
+item.commutertransitpack:BSLB4.name=BSL B4 Loco
 
 <!-- ## ENTITY ## -->
-entity.tc.EntityTemplate.name=Template 
+entity.tc.BSLB4.name=BSL B4 Loco

@@ -266,6 +266,7 @@ item.tc:minecartWorkdayHyrail	WorkdayHyrail	com.jcirmodelsquad.tcjcir.vehicles.l
 item.tc:minecartgtavthing	gtavthing	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.Dieselgtavthing	gtavthing_
 item.tc:minecartEarlyFlat	EarlyFlat	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.EarlyFlat	EarlyFlatCar
 item.tc:minecartAEM7	AEM7	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricAEM7	AEM-7_
+item.commutertransitpack:BSLB4	BSLB4	commutertransitpack.common.entity.locomotive.ElectricBSLB4	BSLB4_
 item.tc:minecartB_BEL	B-BEL	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricB_BEL	b-bel_
 item.tc:minecartCEEslug	CEEslug	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricCEEslug	CEEslug_
 item.tc:minecartCQ310PO	CQ310PO	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricCQ310PO	CQ_310_
