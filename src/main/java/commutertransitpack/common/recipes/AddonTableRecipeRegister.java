@@ -1,17 +1,9 @@
-package trainaddon.common.recipes;
+package commutertransitpack.common.recipes;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidContainerRegistry;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.oredict.OreDictionary;
-import train.common.Traincraft;
 import train.common.api.crafting.ITierCraftingManager;
 import train.common.core.handlers.AbstractRecipeHandler;
 import train.common.core.managers.TierRecipeManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AddonTableRecipeRegister extends AbstractRecipeHandler
 {

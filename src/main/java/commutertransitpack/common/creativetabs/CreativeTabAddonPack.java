@@ -5,7 +5,7 @@
  * @author Mrbrutal
  ******************************************************************************/
 
-package trainaddon.common.creativetabs;
+package commutertransitpack.common.creativetabs;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

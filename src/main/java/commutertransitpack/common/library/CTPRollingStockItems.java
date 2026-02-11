@@ -1,18 +1,15 @@
-package trainaddon.common.library;
+package commutertransitpack.common.library;
 
 import net.minecraft.item.Item;
 import train.common.library.TypeOfRollingStock;
-
-import static train.common.library.TypeOfRollingStock.*;
 
 /**
  * Enum class for the Rolling stock item
  * DO NOT ADD OTHER ITEMS BESIDES ROLLING STOCK ITEMS HERE
  */
-public enum AddonRollingStockItems
+public enum CTPRollingStockItems
 {
-    //minecraftTemplate("template-icon", STEAM, 100),
-    //minecraftTemplateUntradeable("template-icon", STEAM)
+    BSLB4("template-icon", ELECTRIC, 100),
     ;
 
 
@@ -21,7 +18,7 @@ public enum AddonRollingStockItems
      * @param typeOfRollingStock the type of rollingstock
      * @param amountForEmerald amount for Emerald
      */
-    AddonRollingStockItems(String iconName, train.common.library.TypeOfRollingStock typeOfRollingStock, int amountForEmerald)
+    CTPRollingStockItems(String iconName, train.common.library.TypeOfRollingStock typeOfRollingStock, int amountForEmerald)
     {
         this.iconName = iconName;
         TypeOfRollingStock = typeOfRollingStock;
@@ -29,7 +26,7 @@ public enum AddonRollingStockItems
         ItemName = this.name();
     }
 
-    AddonRollingStockItems(String itemName, String iconName, train.common.library.TypeOfRollingStock typeOfRollingStock, int amountForEmerald)
+    CTPRollingStockItems(String itemName, String iconName, train.common.library.TypeOfRollingStock typeOfRollingStock, int amountForEmerald)
     {
         this.iconName = iconName;
         TypeOfRollingStock = typeOfRollingStock;
@@ -42,7 +39,7 @@ public enum AddonRollingStockItems
      * @param typeOfRollingStock the type of rollingstock
      */
 
-    AddonRollingStockItems(String iconName, TypeOfRollingStock typeOfRollingStock)
+    CTPRollingStockItems(String iconName, TypeOfRollingStock typeOfRollingStock)
     {
         this.iconName = iconName;
         TypeOfRollingStock = typeOfRollingStock;
@@ -50,7 +47,7 @@ public enum AddonRollingStockItems
         ItemName = this.name();
     }
 
-    AddonRollingStockItems(String itemName, String iconName, TypeOfRollingStock typeOfRollingStock)
+    CTPRollingStockItems(String itemName, String iconName, TypeOfRollingStock typeOfRollingStock)
     {
         this.iconName = iconName;
         TypeOfRollingStock = typeOfRollingStock;

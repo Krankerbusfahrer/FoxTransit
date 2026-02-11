@@ -1,4 +1,4 @@
-package trainaddon.common;
+package commutertransitpack.common;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -7,16 +7,13 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import train.common.core.creativetab.CreativeTabTraincraft;
 import train.common.core.creativetab.GenericCreativeTabTraincraft;
-import trainaddon.common.core.handler.AddonPackRollingStockEntityHandler;
-import trainaddon.common.creativetabs.CreativeTabAddonPack;
-import trainaddon.common.library.AddonPackItems;
-import trainaddon.common.library.Info;
-import trainaddon.common.recipes.AddonTableRecipeRegister;
+import commutertransitpack.common.core.handler.AddonPackRollingStockEntityHandler;
+import commutertransitpack.common.library.CTPItems;
+import commutertransitpack.common.library.Info;
+import commutertransitpack.common.recipes.AddonTableRecipeRegister;
 
 
 @Mod(modid = Info.modID, name = Info.modName, version = Info.modVersion, dependencies = "required-after:tc")
@@ -37,7 +34,7 @@ public class FoxTCAddonPack
         addonLog.info("preInit Addon Pack -" + Info.modName);
         addonTabOne = new GenericCreativeTabTraincraft("addonTabOne", Info.modID, "apple");
 
-        AddonPackItems addonPackItems = new AddonPackItems();
+        CTPItems addonPackItems = new CTPItems();
         AddonPackRollingStockEntityHandler entityHandler = new AddonPackRollingStockEntityHandler();
     }
 
