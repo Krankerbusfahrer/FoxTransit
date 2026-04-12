@@ -17,11 +17,11 @@ import commutertransitpack.common.recipes.AddonTableRecipeRegister;
 
 
 @Mod(modid = Info.modID, name = Info.modName, version = Info.modVersion, dependencies = "required-after:tc")
-public class FoxTCAddonPack
+public class FoxTCCTP
 {
     /* TrainCraft instance */
     @Instance(Info.modID)
-    public static FoxTCAddonPack instance;
+    public static FoxTCCTP instance;
 
     /* TrainCraft Logger */
     public static Logger addonLog = LogManager.getLogger(Info.modName);
@@ -32,7 +32,7 @@ public class FoxTCAddonPack
     public void preInit(FMLPreInitializationEvent event)
     {
         addonLog.info("preInit Addon Pack -" + Info.modName);
-        addonTabOne = new GenericCreativeTabTraincraft("addonTabOne", Info.modID, "apple");
+        addonTabOne = new GenericCreativeTabTraincraft("CommuterTransitPack", Info.modID, "apple");
 
         CTPItems addonPackItems = new CTPItems();
         AddonPackRollingStockEntityHandler entityHandler = new AddonPackRollingStockEntityHandler();

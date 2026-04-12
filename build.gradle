@@ -36,7 +36,7 @@ configurations {
 
 version = "1.0.0"
 group = "src.trainaddon"
-archivesBaseName = "FoxTC_Addon-PACKNAME"
+archivesBaseName = "FoxTC_CTP"
 
 // -------------------- MINECRAFT --------------------
 minecraft {

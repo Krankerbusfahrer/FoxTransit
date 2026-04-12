@@ -1,6 +1,6 @@
 package commutertransitpack.common.core.handler;
 
-import commutertransitpack.common.FoxTCAddonPack;
+import commutertransitpack.common.FoxTCCTP;
 import commutertransitpack.common.entity.locomotive.ElectricBSLB4;
 import commutertransitpack.common.library.CTPRollingStockItems;
 import train.common.Traincraft;
@@ -10,7 +10,7 @@ public class AddonPackRollingStockEntityHandler
 {
     private Object Instance()
     {
-        return FoxTCAddonPack.instance;
+        return FoxTCCTP.instance;
     }
 
     public AddonPackRollingStockEntityHandler()

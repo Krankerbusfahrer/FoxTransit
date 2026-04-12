@@ -1,8 +1,8 @@
 package commutertransitpack.common.items;
 
+import commutertransitpack.common.FoxTCCTP;
 import train.common.items.ItemAbstractRollingStock;
 import train.common.library.TypeOfRollingStock;
-import commutertransitpack.common.FoxTCAddonPack;
 
 
 public class ItemAddonPackRollingStock  extends ItemAbstractRollingStock
@@ -10,7 +10,7 @@ public class ItemAddonPackRollingStock  extends ItemAbstractRollingStock
     public ItemAddonPackRollingStock(String iconName, TypeOfRollingStock trainType)
     {
         super(iconName);
-        setCreativeTab(FoxTCAddonPack.addonTabOne);
+        setCreativeTab(FoxTCCTP.addonTabOne);
     }
 
     @Override
