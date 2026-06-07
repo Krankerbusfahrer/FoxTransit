@@ -32,7 +32,7 @@ public class FoxTCCTP
     public void preInit(FMLPreInitializationEvent event)
     {
         addonLog.info("preInit Addon Pack -" + Info.modName);
-        addonTabOne = new GenericCreativeTabTraincraft("CommuterTransitPack", Info.modID, "apple");
+        addonTabOne = new GenericCreativeTabTraincraft("CommuterTransitPack", Info.modID, "ctp.icon");
 
         CTPItems addonPackItems = new CTPItems();
         AddonPackRollingStockEntityHandler entityHandler = new AddonPackRollingStockEntityHandler();

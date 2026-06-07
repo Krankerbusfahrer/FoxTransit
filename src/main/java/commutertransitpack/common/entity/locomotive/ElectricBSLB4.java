@@ -24,11 +24,11 @@ public class ElectricBSLB4 extends ElectricTrain {
     }
     
     public void updateRiderPosition() {
-        TraincraftUtil.updateRider(this, 3.5f, 0f, 0.35f);
+        TraincraftUtil.updateRider(this, 3.15f, 0f, 0.35f);
     }
 
     public float getOptimalDistance(EntityMinecart cart) {
-        return 0.8F;
+        return 1.1F;
     }
 
     @Override
@@ -67,7 +67,7 @@ public class ElectricBSLB4 extends ElectricTrain {
                 new TrainRenderRecord(commutertransitpack.common.library.Info.modID,
                         commutertransitpack.common.entity.locomotive.ElectricBSLB4.class, new ModelBSLB4(),
                         "BSLB4_",
-                        new float[]{-1.6f, 0.2F, 0.0F},
+                        new float[]{-1.3f, 0.2F, 0.0F},
                         new float[]{0F, 180F, 180F},
                         null) {
                     @Override

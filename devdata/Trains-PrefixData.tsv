@@ -89,6 +89,7 @@ item.tc:minecartCE8	CE8	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.Di
 item.tc:minecartCF7angle	CF7angle	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselCF7angle	CF7_Angle_
 item.tc:minecartCF7angle2	CF7angle2	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselCF7angle2	CF7_Angle_DBRR_
 item.tc:minecartCF7angle3	CF7angle3	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselCF7angle3	CF7a_
+item.tc:minecartCF7b	CF7b	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselCF7b	CF7b_
 item.tc:minecartCF7hh	CF7hh	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselCF7hh	CF7_highhood_
 item.tc:minecartCF7round	CF7round	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselCF7round	CF7_Round_
 item.tc:minecartCF7round3	CF7round3	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselCF7round3	CF7_Round_F_
@@ -224,6 +225,7 @@ item.tc:minecartSD50	SD50	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.
 item.tc:minecartSD60	SD60	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselSD60	sd60_
 item.tc:minecartSD70ACe	SD70ACe	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselSD70ACe	sd70ace_
 item.tc:minecartSD70ACe_H	SD70ACe_H	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselSD70ACe_H	sd70ace_h_
+item.tc:minecartSD70M	SD70M	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselSD70M	sd70m_
 item.tc:minecartSD70Mac	SD70Mac	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselSD70Mac	sd70mac_
 item.tc:minecartSD9	SD9	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselSD9	sd9_
 item.tc:minecartSDL39	SDL39	com.jcirmodelsquad.tcjcir.vehicles.locomotives.diesel.DieselSDL39	sdl39_
@@ -312,14 +314,14 @@ item.tc:minecartFreightCenterBeam_Empty	Freight Center Beam Empty	train.common.e
 item.tc:minecartFreightCenterBeam_Wood_1	Freight Center Beam Wood1	train.common.entity.rollingStock.freight.EntityFreightCenterbeam_Wood_1	freight_centerbeam_wood_1_
 item.tc:minecartFreightCenterBeam_Wood_2	Freight Center Beam Wood2	train.common.entity.rollingStock.freight.EntityFreightCenterbeam_Wood_2	freight_centerbeam_wood_2_
 item.tc:minecartFreightClosed	Freight Cart Closed RedBrown	train.common.entity.rollingStock.freight.EntityFreightClosed	freightClosed
-item.tc:minecartDenverRioGrandeBaggage	Denver Rio Grande Baggage	train.common.entity.rollingStock.EntityFreightDenverRioGrande	drg_baggage_
+item.tc:minecartDenverRioGrandeBaggage	Denver Rio Grande Baggage	train.common.entity.rollingStock.passenger.baggagecar.EntityFreightDenverRioGrande	drg_baggage_
 item.tc:minecartFreightDepressedFlatbed	Freight Depressed Flatcar	train.common.entity.rollingStock.freight.EntityFreightDepressedFlatbed	depressed_flatbed_
 item.tc:minecartGS4_Baggage	Freight Cart GS4 Baggage	train.common.entity.rollingStock.passenger.baggagecar.EntityFreightGS4_Baggage	GS4_baggage_
 item.tc:minecartFreightGTNG	Freight GTNG Ore Wagon	train.common.entity.rollingStock.EntityFreightGTNG	GTNGOreWagon
-item.tc:minecartFreightGermanPost	Freight German Post	train.common.entity.rollingStock.EntityFreightGermanPost	german_post_
+item.tc:minecartFreightGermanPost	Freight German Post	train.common.entity.rollingStock.passenger.rpo.EntityFreightGermanPost	german_post_
 item.tc:minecartFreightGondola_DB	Freight Gondola DB	train.common.entity.rollingStock.freight.EntityFreightGondola_DB	freightGondola_DB_
 item.tc:minecartGrain	Freight Hopper Green	train.common.entity.rollingStock.freight.EntityFreightGrain	hopper_
-item.tc:minecartHeavyweightMailcar	Heavyweight Freight Car	train.common.entity.rollingStock.EntityFreightHeavyweight	heavyweight_mailcar
+item.tc:minecartHeavyweightMailcar	Heavyweight Freight Car	train.common.entity.rollingStock.passenger.rpo.EntityFreightHeavyweight	heavyweight_mailcar
 item.tc:minecartHeavyweightFreight	Freight Heavyweight Baggage	train.common.entity.rollingStock.passenger.baggagecar.EntityFreightHeavyweightBaggage	heavyweightBoxcar_
 item.tc:minecartFreightHopperUS	Freight Hopper US	train.common.entity.rollingStock.freight.EntityFreightHopperUS	freightHopperUS_
 item.tc:minecartIceWagon	Freight Ice Wagon	train.common.entity.rollingStock.freight.EntityFreightIceWagon	icewagon
@@ -505,7 +507,9 @@ item.tc:minecartMILW1935_44SeatCoach_Observation	MILW 1935 44 Seat Coach Observa
 item.tc:minecartMILW1935_48SeatCoach	MILW 1935 48 Seat Coach	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.MILW1935_48SeatCoach	MILW1935_48SeatCoach_
 item.tc:minecartMILW40boxcar	MILW40boxcar	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.MILW40boxcar	milw40_
 item.tc:minecartMILWPrewarBaggage	MILW Prewar Baggage	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.baggagecar.MILWPrewarBaggage	MILW_prewar_baggage_
+item.tc:minecartMON_lightweightRPO30	Monon Lightweight RPO (30' mail)	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.rpo.MONRPO_30	MON_lightweight_RPO30_
 item.tc:minecartMON_lightweightCoach	Monon 21 Series Lightweight Coach	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.MON_LightweightCoach	MON_LightweightCoach_
+item.tc:minecartMON_lightweightDeluxeCoach	Monon 27 Series Lightweight Deluxe Coach	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.MON_LightweightDeluxeCoach	MON_LightweightDeluxeCoach_
 item.tc:minecartMaPa35FootFlatcar	MaPa_35Flatcar	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.MaPa35FootFlat	MaPa_35flat_
 item.tc:minecartMaPa35FootGondola	MaPa_35Gondola	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.MaPa35FootGondola	MaPa_35gondola_
 item.tc:minecartMillGondola	52footMillGondola	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.MillGondola	MillGondola_
@@ -592,6 +596,7 @@ item.tc:minecartPSSleeper565	PS 5-6-5 Sleeper	com.jcirmodelsquad.tcjcir.vehicles
 item.tc:minecartPSSleeper565DRGW	PS 5-6-5 Sleeper DRGW Edition	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PSSleeper565DRGW	PS_DRGW_lightweight_5-6-5_sleeper_
 item.tc:minecartPS_40t_ss_box	PS_40t_ss_box	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.PS_40t_ss_box	ps_40t_ss_box_
 item.tc:minecartPSCenterDiner	PS Center Diner	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PScenterDiner	PS_lightweight_center_diner_
+item.commutertransitpack:BSLB4Passenger	BSLB4Passenger	commutertransitpack.common.entity.passenger.PassengerBSLB4	BSLB4_
 item.tc:minecartFourBuf	FourBuf	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PassengerFourBuf	4-buf_
 item.tc:minecartFourCorTail	FourCorTail	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PassengerFourCorTail	4-cor_
 item.tc:minecartFourCorTrailerComposite	FourCorTrailerComposite	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PassengerFourCorTrailerComposite	4-cor_trailer_

@@ -10,6 +10,7 @@ import train.common.library.TypeOfRollingStock;
 public enum CTPRollingStockItems
 {
     BSLB4("item.BSLB4_Icon", train.common.library.TypeOfRollingStock.ELECTRIC),
+    BSLB4Passenger("item.BSLB4_Icon", train.common.library.TypeOfRollingStock.PASSENGER),
     ;
 
 

@@ -2,8 +2,10 @@ package commutertransitpack.common.core.handler;
 
 import commutertransitpack.common.FoxTCCTP;
 import commutertransitpack.common.entity.locomotive.ElectricBSLB4;
+import commutertransitpack.common.entity.passenger.PassengerBSLB4;
 import commutertransitpack.common.library.CTPRollingStockItems;
 import train.common.Traincraft;
+import train.common.library.EnumTrainType;
 import train.common.library.register.TrainRecord;
 
 public class AddonPackRollingStockEntityHandler
@@ -32,13 +34,34 @@ public class AddonPackRollingStockEntityHandler
 
         Traincraft.traincraftRegistry
                 .RegisterRollingStockEntity(CTPRollingStockItems.BSLB4.item,
-                        new TrainRecord(Transport.BSLB4().name, ElectricBSLB4.class, CTPRollingStockItems.BSLB4.item,
-                                Transport.BSLB4().additionalText2, Transport.BSLB4().weightinKGs,
-                                new String[] {"Orange"}, 5, 0, 0.95, (int)Transport.BSLB4().topSpeed,
-                                (int)Transport.BSLB4().metric_horsepower, 30, 0,
-                                0.95, -3.1f, 0),
+
+                        new TrainRecord("BSLB4", ElectricBSLB4.class, CTPRollingStockItems.BSLB4.item)
+                                .setTrainType(EnumTrainType.Electric)
+                                .setMHP(350)
+                                .setMaxSpeed(100)
+                                .setMass(0)
+                                .setFuelConsumption(10)
+                                .setHeatingTime(170)
+                                .setAccelerationRate(0.95)
+                                .setBrakeRate(0.95)
+                                .setColors(new String[] {"Orange"})
+                                .setGuiRenderScale(10)
+                                .setBogieLocoPosition(-2.5f)
+                                .setAdditionalTooltip(new String[] {"First CTP Train"}),
                         Instance()
                 );
+
+        Traincraft.traincraftRegistry
+                .RegisterRollingStockEntity(CTPRollingStockItems.BSLB4Passenger.item,
+            new TrainRecord("BSLB4Passenger", PassengerBSLB4.class, CTPRollingStockItems.BSLB4Passenger.item)
+                    .setTrainType(EnumTrainType.Passenger)
+                    .setMass(2)
+                    .setColors(new String[] {"Orange"})
+                    .setGuiRenderScale(14)
+                    .setBogieLocoPosition(-2.5f)
+                    .setAdditionalTooltip(new String[] {"First CTP Passenger Cart"}),
+            Instance()
+    );
 
 
     }
