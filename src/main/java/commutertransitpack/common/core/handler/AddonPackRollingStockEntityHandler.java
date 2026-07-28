@@ -2,6 +2,7 @@ package commutertransitpack.common.core.handler;
 
 import commutertransitpack.common.FoxTCCTP;
 import commutertransitpack.common.entity.locomotive.ElectricBSLB4;
+import commutertransitpack.common.entity.locomotive.ElectricSEPTALRV;
 import commutertransitpack.common.entity.passenger.PassengerBSLB4;
 import commutertransitpack.common.library.CTPRollingStockItems;
 import train.common.Traincraft;
@@ -66,7 +67,7 @@ public class AddonPackRollingStockEntityHandler
         Traincraft.traincraftRegistry
                 .RegisterRollingStockEntity(CTPRollingStockItems.SEPTALRV.item,
 
-                        new TrainRecord("SEPTALRV", ElectricBSLB4.class, CTPRollingStockItems.SEPTALRV.item)
+                        new TrainRecord("SEPTALRV", ElectricSEPTALRV.class, CTPRollingStockItems.SEPTALRV.item)
                                 .setTrainType(EnumTrainType.Electric)
                                 .setMHP(300)
                                 .setMaxSpeed(70)

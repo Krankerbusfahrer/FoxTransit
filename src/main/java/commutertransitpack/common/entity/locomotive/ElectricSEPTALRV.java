@@ -20,11 +20,11 @@ public class ElectricSEPTALRV extends ElectricTrain {
     }
     
     public void updateRiderPosition() {
-        TraincraftUtil.updateRider(this, 3.15f, 0f, 0.35f);
+        TraincraftUtil.updateRider(this, 3.55f, -0.2f, 0.0f);
     }
 
     public float getOptimalDistance(EntityMinecart cart) {
-        return 1.1F;
+        return 1.4F;
     }
 
     @Override
@@ -48,13 +48,13 @@ public class ElectricSEPTALRV extends ElectricTrain {
     }
 
     //@Override
-    // public ElectricBSLB4(World world) {
-    //    super(world);
-    //  initOverlayTextures();
-    // getOverlayTextureContainer().initOverlaySpecification(new OTSpecificationDynamic(
+    //public ElectricSEPTALRV(World world) {
+       // super(world);
+      //initOverlayTextures();
+      //getOverlayTextureContainer().initOverlaySpecification(new OTSpecificationDynamic(
     //         "Destination Sign",
     //        40, 12, 11, EnumOverlayFonts.OxygenSansSmall, 16f, OTSpecificationDynamic.AlignmentMode.ALIGN_CENTER_AND_FILL,
-    //       new Point[]{new Point(334, 141)})
+    //      new Point[]{new Point(334, 141)})
     // );
 
     @Override
@@ -70,7 +70,7 @@ public class ElectricSEPTALRV extends ElectricTrain {
                     public ResourceLocation getTextureFile(String colorAsString) {
                         String texturePath = "";
                         switch (colorAsString.toLowerCase()) {
-                            case "orange":
+                            case "white":
                                 texturePath = "textures/trains/SEPTALRV/SEPTALRV_white";
                                 break;
 
