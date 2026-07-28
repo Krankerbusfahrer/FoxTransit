@@ -63,6 +63,26 @@ public class AddonPackRollingStockEntityHandler
             Instance()
     );
 
+        Traincraft.traincraftRegistry
+                .RegisterRollingStockEntity(CTPRollingStockItems.SEPTALRV.item,
+
+                        new TrainRecord("SEPTALRV", ElectricBSLB4.class, CTPRollingStockItems.SEPTALRV.item)
+                                .setTrainType(EnumTrainType.Electric)
+                                .setMHP(300)
+                                .setMaxSpeed(70)
+                                .setMass(0)
+                                .setFuelConsumption(10)
+                                .setHeatingTime(170)
+                                .setAccelerationRate(0.95)
+                                .setBrakeRate(0.95)
+                                .setColors(new String[] {"White"})
+                                .setGuiRenderScale(10)
+                                .setBogieLocoPosition(-2.5f)
+                                .setAdditionalTooltip(new String[] {"First trolley in CTP"}),
+                        Instance()
+                );
+
+
 
     }
 }

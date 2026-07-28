@@ -3,7 +3,10 @@
 <!-- ## Save the file the same way this file was saved but replace "en_US" with appropriate language name ## -->
 
 item.commutertransitpack:BSLB4.name=BSL B4 Loco
+item.commutertransitpack:BSLB4Passenger.name=BSL B4 Passenger
+item.commutertransitpack:SEPTALRV.name=SEPTA LRV
 
 <!-- ## ENTITY ## -->
 entity.tc.BSLB4.name=BSL B4 Loco
 entity.tc.BSLB4Passenger.name=BSL B4 Passenger
+entity.tc.SEPTALRV.name=SEPTA LRV

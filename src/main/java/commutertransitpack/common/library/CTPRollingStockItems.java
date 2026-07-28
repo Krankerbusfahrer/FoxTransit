@@ -11,6 +11,7 @@ public enum CTPRollingStockItems
 {
     BSLB4("item.BSLB4_Icon", train.common.library.TypeOfRollingStock.ELECTRIC),
     BSLB4Passenger("item.BSLB4_Icon", train.common.library.TypeOfRollingStock.PASSENGER),
+    SEPTALRV("item.SEPTALRV_Icon", train.common.library.TypeOfRollingStock.ELECTRIC),
     ;
 
 

@@ -153,6 +153,12 @@ public class Transport {
                 "", "", type, " Passenger Locomotive",
                 9566f, 2240f, 30.9f, 110f, 50f, false, true, 0);
     }
+    //SEPTALRV
+    public static LocomotiveWithBackspeed SEPTALRV() {
+        return new LocomotiveWithBackspeed("SEPTALRV", "USA", "1982", "Electric",
+                "", "", type, " Passenger Locomotive",
+                9566f, 2240f, 30.9f, 70f, 50f, false, true, 0);
+    }
 }
 
 
