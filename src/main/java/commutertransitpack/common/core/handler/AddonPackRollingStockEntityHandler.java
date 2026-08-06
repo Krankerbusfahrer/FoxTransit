@@ -2,8 +2,10 @@ package commutertransitpack.common.core.handler;
 
 import commutertransitpack.common.FoxTCCTP;
 import commutertransitpack.common.entity.locomotive.ElectricBSLB4;
+import commutertransitpack.common.entity.locomotive.ElectricSD100Front;
 import commutertransitpack.common.entity.locomotive.ElectricSEPTALRV;
 import commutertransitpack.common.entity.passenger.PassengerBSLB4;
+import commutertransitpack.common.entity.passenger.PassengerSD100Tail;
 import commutertransitpack.common.library.CTPRollingStockItems;
 import train.common.Traincraft;
 import train.common.library.EnumTrainType;
@@ -80,6 +82,37 @@ public class AddonPackRollingStockEntityHandler
                                 .setGuiRenderScale(10)
                                 .setBogieLocoPosition(-2.5f)
                                 .setAdditionalTooltip(new String[] {"First trolley in CTP"}),
+                        Instance()
+                );
+
+        Traincraft.traincraftRegistry
+                .RegisterRollingStockEntity(CTPRollingStockItems.SD100Front.item,
+
+                        new TrainRecord("SD100Front", ElectricSD100Front.class, CTPRollingStockItems.SD100Front.item)
+                                .setTrainType(EnumTrainType.Electric)
+                                .setMHP(300)
+                                .setMaxSpeed(80)
+                                .setMass(0)
+                                .setFuelConsumption(10)
+                                .setHeatingTime(170)
+                                .setAccelerationRate(0.95)
+                                .setBrakeRate(0.95)
+                                .setColors(new String[] {"Orange"})
+                                .setGuiRenderScale(10)
+                                .setBogieLocoPosition(-2.5f)
+                                .setAdditionalTooltip(new String[] {"First LRV in CTP"}),
+                        Instance()
+                );
+
+        Traincraft.traincraftRegistry
+                .RegisterRollingStockEntity(CTPRollingStockItems.SD100Tail.item,
+                        new TrainRecord("SD100Tail", PassengerSD100Tail.class, CTPRollingStockItems.SD100Tail.item)
+                                .setTrainType(EnumTrainType.Passenger)
+                                .setMass(2)
+                                .setColors(new String[] {"Orange"})
+                                .setGuiRenderScale(14)
+                                .setBogieLocoPosition(-2.5f)
+                                .setAdditionalTooltip(new String[] {"Tail Segment of the SD100"}),
                         Instance()
                 );
 

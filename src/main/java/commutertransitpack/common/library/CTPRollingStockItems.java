@@ -12,6 +12,8 @@ public enum CTPRollingStockItems
     BSLB4("item.BSLB4_Icon", train.common.library.TypeOfRollingStock.ELECTRIC),
     BSLB4Passenger("item.BSLB4_Icon", train.common.library.TypeOfRollingStock.PASSENGER),
     SEPTALRV("item.SEPTALRV_Icon", train.common.library.TypeOfRollingStock.ELECTRIC),
+    SD100Front("item.SD100Front_Icon", train.common.library.TypeOfRollingStock.ELECTRIC),
+    SD100Tail("item.SD100Tail_Icon", train.common.library.TypeOfRollingStock.PASSENGER),
     ;
 
 

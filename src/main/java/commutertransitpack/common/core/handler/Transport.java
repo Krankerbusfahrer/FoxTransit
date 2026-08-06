@@ -159,6 +159,14 @@ public class Transport {
                 "", "", type, " Passenger Locomotive",
                 9566f, 2240f, 30.9f, 70f, 50f, false, true, 0);
     }
+
+    //SD100Front
+    public static LocomotiveWithBackspeed SD100Front() {
+        return new LocomotiveWithBackspeed("SD100Front", "USA", "1988", "Electric",
+                "", "", type, " Passenger Locomotive",
+                9566f, 2240f, 30.9f, 80f, 50f, false, true, 0);
+    }
+
 }
 
 

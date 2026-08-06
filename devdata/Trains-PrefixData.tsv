@@ -281,6 +281,7 @@ item.tc:minecartGM6C	GM6C	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric
 item.tc:minecartJT7	JT7	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricJT7	jt7_bigJ_
 item.tc:minecartKawasakiLRV	KawasakiLRV	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricKawasakiLRV	kawasaki_white
 item.tc:minecartPCC	PCC	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricPCC	Pcc_
+item.commutertransitpack:SD100Front	SD100Front	commutertransitpack.common.entity.locomotive.ElectricSD100Front	SD100_
 item.commutertransitpack:SEPTALRV	SEPTALRV	commutertransitpack.common.entity.locomotive.ElectricSEPTALRV	SEPTALRV_
 item.tc:minecartTwoBil	TwoBil	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricTwoBil	2-bil_
 item.tc:minecartW_A11	SEC W-A11	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.ElectricW_A11	W_A11_
@@ -602,6 +603,7 @@ item.tc:minecartFourBuf	FourBuf	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.
 item.tc:minecartFourCorTail	FourCorTail	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PassengerFourCorTail	4-cor_
 item.tc:minecartFourCorTrailerComposite	FourCorTrailerComposite	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PassengerFourCorTrailerComposite	4-cor_trailer_
 item.tc:minecartFourCorTrailerSecond	FourCorTrailerSecond	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PassengerFourCorTrailerSecond	4-cor_trailer_
+item.commutertransitpack:SD100Tail	SD100Tail	commutertransitpack.common.entity.passenger.PassengerSD100Tail	SD100_
 item.tc:minecartTwoBilTail	TwoBilTail	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PassengerTwoBilTail	2-bil_
 item.tc:minecartR70Reefer	R70Reefer	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.R70Reefer	R70Reefer_
 item.tc:minecartR70Reefer2	R70Reefer2	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.R70Reefer2	R-70-15_
