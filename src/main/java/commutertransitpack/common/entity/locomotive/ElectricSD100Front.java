@@ -73,6 +73,9 @@ public class ElectricSD100Front extends ElectricTrain {
                             case "orange":
                                 texturePath = "textures/trains/SD100/SD100_orange";
                                 break;
+                            case "blue":
+                                texturePath = "textures/trains/SD100/SD100_blue";
+                                break;
 
                         }
                         texturePath += ".png";
