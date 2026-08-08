@@ -97,7 +97,7 @@ public class AddonPackRollingStockEntityHandler
                                 .setHeatingTime(170)
                                 .setAccelerationRate(0.95)
                                 .setBrakeRate(0.95)
-                                .setColors(new String[] {"Orange","Blue"})
+                                .setColors(new String[] {"Orange","Blue","Yellow"})
                                 .setGuiRenderScale(10)
                                 .setBogieLocoPosition(-2.5f)
                                 .setAdditionalTooltip(new String[] {"First LRV in CTP"}),
@@ -109,7 +109,7 @@ public class AddonPackRollingStockEntityHandler
                         new TrainRecord("SD100Tail", PassengerSD100Tail.class, CTPRollingStockItems.SD100Tail.item)
                                 .setTrainType(EnumTrainType.Passenger)
                                 .setMass(2)
-                                .setColors(new String[] {"Orange","Blue"})
+                                .setColors(new String[] {"Orange","Blue","Yellow"})
                                 .setGuiRenderScale(14)
                                 .setBogieLocoPosition(-2.5f)
                                 .setAdditionalTooltip(new String[] {"Tail Segment of the SD100"}),

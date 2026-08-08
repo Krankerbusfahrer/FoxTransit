@@ -52,6 +52,9 @@ public class PassengerSD100Tail extends AbstractPassengerCar
 							case "blue":
 								texturePath = "textures/trains/SD100/SD100_blue";
 								break;
+							case "yellow":
+								texturePath = "textures/trains/SD100/SD100_yellow";
+								break;
 
 						}
 						texturePath += ".png";
