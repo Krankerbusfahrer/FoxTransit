@@ -21,7 +21,7 @@ public class ModelSD100Front extends ModelConverter //Same as Filename
 
 	public ModelSD100Front() //Same as Filename
 	{
-		bodyModel = new ModelRendererTurbo[277];
+		bodyModel = new ModelRendererTurbo[278];
 
 		initbodyModel_1();
 
@@ -310,6 +310,7 @@ public class ModelSD100Front extends ModelConverter //Same as Filename
 		bodyModel[274] = new ModelRendererTurbo(this, 13, 5, textureX, textureY); // Box 281
 		bodyModel[275] = new ModelRendererTurbo(this, 13, 5, textureX, textureY); // Box 282
 		bodyModel[276] = new ModelRendererTurbo(this, 13, 5, textureX, textureY); // Box 283
+		bodyModel[277] = new ModelRendererTurbo(this, 180, 132, textureX, textureY); // Box 277
 
 		bodyModel[0].addShapeBox(0F, 0F, 0F, 23, 1, 19, 0F,0F, 0F, 0F, 0.5F, 0F, 0F, 0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0.5F, 0F, 0F, 0.5F, 0F, 0F, 0F, 0F, 0F); // Box 91
 		bodyModel[0].setRotationPoint(-13.5F, 2.5F, -9.5F);
@@ -1142,5 +1143,8 @@ public class ModelSD100Front extends ModelConverter //Same as Filename
 
 		bodyModel[276].addShapeBox(0F, 0F, 0F, 1, 1, 1, 0F,0F, 0.1F, -0.125F, 0F, 0.1F, -0.125F, 0F, -0.15F, -0.15F, 0F, -0.15F, -0.15F, 0F, -0.125F, -0.125F, 0F, -0.125F, -0.125F, 0F, -0.125F, 0.1F, 0F, -0.125F, 0.1F); // Box 283
 		bodyModel[276].setRotationPoint(-33.7F, -21.25F, 0F);
+
+		bodyModel[277].addShapeBox(0F, 0F, 0F, 1, 10, 60, 0F,-0.15F, 0F, -48F, 0F, 0F, -48F, 0F, 0F, 0F, -0.15F, 0F, 0F, 0F, -8F, -48F, 0F, -8F, -48F, 0F, -8F, 0F, 0F, -8F, 0F); // Box 277
+		bodyModel[277].setRotationPoint(-34F, -18.5F, -54F);
 	}
 }

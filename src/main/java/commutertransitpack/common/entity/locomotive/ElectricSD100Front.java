@@ -11,12 +11,22 @@ import train.common.api.ElectricTrain;
 import train.common.core.util.TraincraftUtil;
 import train.common.library.EnumSounds;
 import train.common.library.sounds.SoundRecord;
+import train.common.overlaytexture.EnumOverlayFonts;
+import train.common.overlaytexture.OTSpecificationDynamic;
+
+import java.awt.*;
 
 public class ElectricSD100Front extends ElectricTrain {
 
     public ElectricSD100Front(World world) {
         super(world);    
         InsertTexture(0, " Old RTD Denver Livery for the SD100");
+        initOverlayTextures();
+        getOverlayTextureContainer().initOverlaySpecification(new OTSpecificationDynamic(
+               "Destination Sign",
+              60, 10, 16, EnumOverlayFonts.OxygenSansSmall, 16f, OTSpecificationDynamic.AlignmentMode.ALIGN_CENTER_AND_FILL,
+           new Point[]{new Point(180, 192)})
+        );
     }
     
     public void updateRiderPosition() {
