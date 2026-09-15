@@ -23,6 +23,7 @@ item.tc:minecartAmCafe2	AmCafe2	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.
 item.tc:minecartAmfleet	Amfleet	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.Amfleet	amfleet_
 item.tc:minecartAmfleet2	Amfleet2	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.Amfleet2	amfleet2_
 item.tc:minecartAmfleetCab	AmfleetCab	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.controlcar.AmfleetCab	amfleet_Cabber_
+item.tc:minecartBSC3483	BSC3483	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.BSC3483	BSC_3483_
 item.tc:minecartF7BSlug	F7BSlug	com.jcirmodelsquad.tcjcir.vehicles.locomotives.BUnitF7	Skin_Plane_ThisErrorIsERatedForEveryone
 item.tc:minecartBethgonII	BethgonII	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.BethgonII	Bethgon_
 item.tc:minecartBigMeme	BigMeme	com.jcirmodelsquad.tcjcir.vehicles.locomotives.eletric.BigMeme	bigmeme_
@@ -470,6 +471,7 @@ item.tc:minecartWork	Work Cart Yellow	train.common.entity.rollingStock.workcart.
 item.tc:minecartEvans5100	Evans5100	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.Evans5100	Evans_5100_
 item.tc:minecartEvansCoilCar	EvansCoilCar	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.EvansCoilCar	EvansCoilCar_
 item.tc:minecartGeometryCar	NXTrack Geometry Car	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.misc.ExperimentalGeometryCar	geometrycar_
+item.tc:minecartFMCWoodchip	FMCWoodchip	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.FMCWoodchip	fmcwoodchip_
 item.tc:minecartFNCC2375Hopper	FNCC2375Hopper	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.FNCC2375Hopper	FNCC2375_
 item.tc:minecartFNCC50Foot	FNCC50FootBoxcar	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.FNCC50Foot	FNCC50Foot_
 item.tc:minecartFNCC60FootBulk	FNCC60FootBulk	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.FNCC60FootBulk	FNCC60FootBulk_
@@ -605,6 +607,7 @@ item.tc:minecartFourCorTrailerComposite	FourCorTrailerComposite	com.jcirmodelsqu
 item.tc:minecartFourCorTrailerSecond	FourCorTrailerSecond	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PassengerFourCorTrailerSecond	4-cor_trailer_
 item.commutertransitpack:SD100Tail	SD100Tail	commutertransitpack.common.entity.passenger.PassengerSD100Tail	SD100_
 item.tc:minecartTwoBilTail	TwoBilTail	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.PassengerTwoBilTail	2-bil_
+item.tc:minecartPullman69ChairCar	Pullman 69' Chair Car	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.passenger.Pullman69ChairCar	Pullman69ChairCar_
 item.tc:minecartR70Reefer	R70Reefer	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.R70Reefer	R70Reefer_
 item.tc:minecartR70Reefer2	R70Reefer2	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.R70Reefer2	R-70-15_
 item.tc:minecartReefer64	Reefer64	com.jcirmodelsquad.tcjcir.vehicles.rollingstock.freight.Reefer64Foot	reefer_64_

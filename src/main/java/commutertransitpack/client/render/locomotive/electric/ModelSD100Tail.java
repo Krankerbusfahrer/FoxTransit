@@ -9,8 +9,10 @@
 
 package commutertransitpack.client.render.locomotive.electric;
 
+import net.minecraft.entity.Entity;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
+import train.client.renderhelper.ModelRenderHelper;
 
 ;
 
@@ -42,7 +44,7 @@ public class ModelSD100Tail extends ModelConverter //Same as Filename
 		bodyModel[6] = new ModelRendererTurbo(this, 217, 1, textureX, textureY); // Box 21
 		bodyModel[7] = new ModelRendererTurbo(this, 1, 1, textureX, textureY); // Box 31
 		bodyModel[8] = new ModelRendererTurbo(this, 9, 1, textureX, textureY); // Box 35
-		bodyModel[9] = new ModelRendererTurbo(this, 73, 1, textureX, textureY); // Box 36  lamp left
+		bodyModel[9] = new ModelRendererTurbo(this, 73, 1, textureX, textureY,"lamp"); // Box 36  lamp left
 		bodyModel[10] = new ModelRendererTurbo(this, 81, 1, textureX, textureY); // Box 37
 		bodyModel[11] = new ModelRendererTurbo(this, 281, 1, textureX, textureY); // Box 37
 		bodyModel[12] = new ModelRendererTurbo(this, 217, 1, textureX, textureY); // Box 38
@@ -154,7 +156,7 @@ public class ModelSD100Tail extends ModelConverter //Same as Filename
 		bodyModel[118] = new ModelRendererTurbo(this, 193, 89, textureX, textureY); // Box 148
 		bodyModel[119] = new ModelRendererTurbo(this, 225, 41, textureX, textureY); // Box 149
 		bodyModel[120] = new ModelRendererTurbo(this, 33, 33, textureX, textureY); // Box 150
-		bodyModel[121] = new ModelRendererTurbo(this, 49, 33, textureX, textureY); // Box 151 lamp right
+		bodyModel[121] = new ModelRendererTurbo(this, 49, 33, textureX, textureY,"lamp"); // Box 151 lamp right
 		bodyModel[122] = new ModelRendererTurbo(this, 209, 33, textureX, textureY); // Box 152
 		bodyModel[123] = new ModelRendererTurbo(this, 321, 41, textureX, textureY); // Box 153
 		bodyModel[124] = new ModelRendererTurbo(this, 361, 33, textureX, textureY); // Box 154
@@ -874,5 +876,10 @@ public class ModelSD100Tail extends ModelConverter //Same as Filename
 
 		bodyModel[209].addShapeBox(0F, 0F, 0F, 1, 10, 60, 0F,-0.15F, 0F, -48F, 0F, 0F, -48F, 0F, 0F, 0F, -0.15F, 0F, 0F, 0F, -8F, -48F, 0F, -8F, -48F, 0F, -8F, 0F, 0F, -8F, 0F); // Box 277
 		bodyModel[209].setRotationPoint(-31F, -18.5F, -54F);
+	}
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
+	{
+		ModelRenderHelper.renderModelWithRollingStockLightControls(bodyModel, entity, f5);
 	}
 }
